@@ -23,7 +23,7 @@ public class Palindrome {
 		int result = 0;
 
 		for(int a=0; a<word.length(); a++){
-			for(int b=word.length()-1; b>a; b--){
+			for(int b=word.length()-1; b>=a; b--){
 
 				int currentWordLength = b - a;
 
