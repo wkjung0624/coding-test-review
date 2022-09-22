@@ -13,29 +13,29 @@ public class DuplicatedTicket {
 		 */
 
 		int numOfTickets = scanner.nextInt();
-		List<Integer> values = new LinkedList<>();
+		List<Integer> tickets = new LinkedList<>();
 
 		for(int i=0; i<numOfTickets; i++)
-			values.add(scanner.nextInt());
+			tickets.add(scanner.nextInt());
 
-		Collections.sort(values);
+		Collections.sort(tickets);
 
 		int checkIdx = 0;
-		while(checkIdx < values.size()){
-			int checkVal = values.get(checkIdx);
-			int firstIdx = values.indexOf(checkVal);
-			int lastIdx = values.lastIndexOf(checkVal);
+		while(checkIdx < tickets.size()){
+			int checkVal = tickets.get(checkIdx);
+			int firstIdx = tickets.indexOf(checkVal);
+			int lastIdx = tickets.lastIndexOf(checkVal);
 
 			if(firstIdx != lastIdx){
 				for(int removeCnt=0; removeCnt<=lastIdx-firstIdx; removeCnt++) {
-					values.remove(firstIdx);
+					tickets.remove(firstIdx);
 				}
 			} else {
 				checkIdx++;
 			}
 		}
 
-		for (Integer value : values)
-			System.out.print(value + " ");
+		for (Integer ticket : tickets)
+			System.out.print(ticket + " ");
 	}
 }
